@@ -17,9 +17,6 @@ class Entreprise extends Users
     #[ORM\Column(length: 100)]
     private ?string $NomEntreprise = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $Email = null;
-
     #[ORM\Column(length: 70)]
     private ?string $Addresse = null;
 
@@ -45,18 +42,6 @@ class Entreprise extends Users
     public function setNomEntreprise(string $NomEntreprise): static
     {
         $this->NomEntreprise = $NomEntreprise;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->Email;
-    }
-
-    public function setEmail(string $Email): static
-    {
-        $this->Email = $Email;
 
         return $this;
     }
