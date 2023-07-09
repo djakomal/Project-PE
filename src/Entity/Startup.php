@@ -6,7 +6,7 @@ use App\Repository\StartupRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StartupRepository::class)]
-class Startup
+class Startup extends Users
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
