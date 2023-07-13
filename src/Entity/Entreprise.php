@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EntrepriseRepository::class)]
-class Entreprise
+class Entreprise extends Users
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,9 +16,6 @@ class Entreprise
 
     #[ORM\Column(length: 100)]
     private ?string $NomEntreprise = null;
-
-    #[ORM\Column(length: 100)]
-    private ?string $Email = null;
 
     #[ORM\Column(length: 70)]
     private ?string $Addresse = null;
@@ -45,18 +42,6 @@ class Entreprise
     public function setNomEntreprise(string $NomEntreprise): static
     {
         $this->NomEntreprise = $NomEntreprise;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->Email;
-    }
-
-    public function setEmail(string $Email): static
-    {
-        $this->Email = $Email;
 
         return $this;
     }
